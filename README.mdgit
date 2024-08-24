@@ -1,0 +1,1 @@
+"# mon-projet"  initgit add .git commit -m "first commit"git branch -M maingit remote add origin https://github.com/anes-tech/mon-projet.gitgit push -u origin main

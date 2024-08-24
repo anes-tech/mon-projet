@@ -1,0 +1,180 @@
+/* إعدادات عامة */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    background-image: url('photo.jpg'); /* تعيين صورة خلفية */
+    background-size: cover; /* ملء الخلفية بالكامل */
+    background-position: center; /* ضبط الصورة في منتصف الخلفية */
+    background-attachment: fixed; /* تثبيت الصورة بحيث لا تتحرك عند التمرير */
+}
+
+/* شريط التنقل */
+nav {
+    background-color: rgba(0, 77, 64, 0.8); /* خلفية شبه شفافة */
+    color: white;
+    padding: 1em;
+    position: relative;
+    text-align: right; /* توجيه النصوص إلى اليمين */
+}
+
+/* خيارات تبديل اللغة */
+.language-switcher {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.language-switcher button {
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 0 5px;
+}
+
+.language-switcher button:hover {
+    text-decoration: underline;
+}
+
+/* القائمة */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start; /* محاذاة العناصر إلى اليسار */
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* الأقسام */
+section {
+    padding: 2em;
+    margin: 0 auto;
+    max-width: 900px;
+    background-color: rgba(255, 255, 255, 0.9); /* خلفية شفافة قليلاً */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* النصوص الخاصة باللغة */
+.content-ar, .content-fr {
+    display: none; /* إخفاء جميع المحتويات بشكل افتراضي */
+}
+
+.lang-ar .content-ar {
+    display: block; /* إظهار المحتوى العربي */
+}
+
+.lang-fr .content-fr {
+    display: block; /* إظهار المحتوى الفرنسي */
+}
+
+/* حزم العروض */
+.tour-gallery {
+    display: flex;
+    justify-content: space-between; /* توزيع الصور بالتساوي */
+    flex-wrap: wrap; /* السماح بتغيير السطر عند الحاجة */
+}
+
+.tour-gallery a {
+    flex: 1 1 calc(33% - 1em); /* تخصيص المساحة لكل صورة */
+    margin: 0.5em;
+    display: block;
+}
+
+.tour-gallery img {
+    width: 100%;
+    height: 200px; /* تحديد ارتفاع موحد لجميع الصور */
+    object-fit: cover; /* ضبط الصور لتملأ الحاوية مع الاقتصاص إذا لزم الأمر */
+    border-radius: 8px;
+    cursor: pointer; /* إضافة مؤشر التحديد عند مرور الماوس على الصورة */
+}
+
+/* التذييل */
+footer {
+    background-color: #004d40;
+    color: white;
+    text-align: right; /* توجيه النصوص إلى اليمين */
+    padding: 1em;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-bottom: 1em;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 1em;
+}
+
+.contact-details {
+    margin-bottom: 1em;
+}
+
+.phone-numbers {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.phone-group-ar, .phone-group-fr {
+    display: none; /* إخفاء جميع مجموعات أرقام الهواتف بشكل افتراضي */
+}
+
+.lang-ar .phone-group-ar {
+    display: block; /* إظهار أرقام الهواتف العربية */
+}
+
+.lang-fr .phone-group-fr {
+    display: block; /* إظهار أرقام الهواتف الفرنسية */
+}
+
+/* نمط النموذج */
+#contact-form label {
+    display: block;
+    margin: 0.5em 0 0.2em;
+}
+
+#contact-form input, #contact-form textarea {
+    width: 100%;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+#contact-form button {
+    background-color: #00796b;
+    color: white;
+    border: none;
+    padding: 0.7em 1.2em;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#contact-form button:hover {
+    background-color: #004d40;
+}
+
