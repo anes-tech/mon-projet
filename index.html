@@ -14,7 +14,7 @@
             padding: 0;
             direction: rtl;
             text-align: right;
-            background-color: #f4f4f4; /* Background color for the whole page */
+            background-color: #f4f4f4;
         }
 
         nav {
@@ -43,45 +43,35 @@
 
         section {
             padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: rgba(255, 255, 255, 0.2); /* Slightly transparent */
+            background-color: rgba(255, 255, 255, 0.2); /* Transparent background */
         }
 
         .section-content {
-            max-width: 800px;
-            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
             text-align: center;
-            background-color: rgba(255, 255, 255, 0.6); /* Slightly transparent */
+            background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
             padding: 20px;
-            border-radius: 8px; /* Rounded corners */
+            border-radius: 8px;
         }
 
         .tour-gallery {
             display: flex;
-            justify-content: center; /* Center images */
-            align-items: center;
-            width: 80%; /* Width of the gallery */
-            height: 200px; /* Height of the gallery */
-            margin: 0 auto; /* Center the gallery horizontally */
-            overflow: hidden; /* Hide overflowing content */
-            position: relative; /* Relative positioning for absolute children */
+            overflow-x: auto; /* Enable horizontal scrolling */
+            scroll-snap-type: x mandatory; /* Snap to images */
+            width: 100%;
+            height: auto; /* Adjust height based on image size */
+            margin: 0 auto; /* Center the gallery */
+            padding: 10px 0; /* Add padding for better spacing */
         }
 
         .tour-gallery img {
-            width: 300px; /* Width of images */
-            height: 200px; /* Height of images */
+            width: auto; /* Maintain original width */
+            height: 200px; /* Set a fixed height */
             margin: 0 10px; /* Space between images */
-            transition: opacity 1s ease-in-out; /* Smooth transition */
-        }
-
-        .tour-gallery img.active {
-            opacity: 1; /* Show the active image */
-        }
-
-        .tour-gallery img {
-            opacity: 0; /* Initially hide images */
+            object-fit: cover; /* Maintain aspect ratio */
+            scroll-snap-align: center; /* Center each image in the viewport */
+            transition: opacity 1s ease-in-out;
         }
 
         footer {
@@ -92,12 +82,12 @@
 
         footer p {
             margin: 0;
-            color: #fff; /* White color for text */
+            color: #fff;
         }
 
         .contact-info {
             text-align: center;
-            color: #fff; /* White color for text */
+            color: #fff;
         }
 
         .contact-details {
@@ -109,27 +99,27 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #fff; /* White color for text */
+            color: #fff;
         }
 
         .contact-details .email-icon,
         .contact-details .address-icon,
         .contact-details .phone-icon {
-            margin-left: 10px; /* Adjusted spacing */
-            color: #fff; /* White color for the icons */
+            margin-left: 10px;
+            color: #fff;
         }
 
         .contact-details .email,
         .contact-details .address,
         .contact-details .phone {
-            color: #fff; /* White color for text */
-            text-decoration: none; /* Remove underline from the link */
+            color: #fff;
+            text-decoration: none;
         }
 
         .contact-details .email:hover,
         .contact-details .address:hover,
         .contact-details .phone:hover {
-            text-decoration: underline; /* Underline text on hover */
+            text-decoration: underline;
         }
 
         .phone-numbers {
@@ -143,24 +133,36 @@
             margin: 0;
             display: flex;
             align-items: center;
-            color: #fff; /* White color for text */
+            color: #fff;
         }
 
         .phone-numbers .phone-icon {
             margin-right: 10px;
-            color: #fff; /* White color for the icon */
+            color: #fff;
         }
 
         @media (max-width: 600px) {
+            nav ul {
+                flex-direction: column;
+            }
+
+            .section-content {
+                padding: 10px;
+            }
+
+            .tour-gallery {
+                height: auto; /* Allow height to adjust */
+            }
+
             .tour-gallery img {
+                height: auto; /* Allow height to adjust */
                 width: 100%; /* Adjust width for smaller screens */
-                height: auto; /* Adjust height for smaller screens */
+                object-fit: contain; /* Adjust to contain the image */
             }
         }
     </style>
 </head>
 <body>
-    <!-- شريط التنقل -->
     <nav>
         <ul>
             <li><a href="#home">الرئيسية</a></li>
@@ -170,7 +172,6 @@
         </ul>
     </nav>
 
-    <!-- الصفحة الرئيسية -->
     <section id="home">
         <div class="section-content">
             <h1>مرحبا بك في وكالة البعثة للسياحة والأسفار</h1>
@@ -178,7 +179,6 @@
         </div>
     </section>
 
-    <!-- عن الوكالة -->
     <section id="about">
         <div class="section-content">
             <h2>عن الوكالة</h2>
@@ -186,21 +186,19 @@
         </div>
     </section>
 
-    <!-- العروض السياحية -->
     <section id="tours">
         <div class="section-content">
             <h2>العروض السياحية</h2>
             <div class="tour-gallery">
-                <a href="photo1.jpg" data-lightbox="gallery" data-title="عرض 1"><img src="photo1.jpg" alt="عرض 1"></a>
-                <a href="photo2.jpg" data-lightbox="gallery" data-title="عرض 2"><img src="photo2.jpg" alt="عرض 2"></a>
-                <a href="photo3.jpg" data-lightbox="gallery" data-title="عرض 3"><img src="photo3.jpg" alt="عرض 3"></a>
-                <a href="photo4.jpg" data-lightbox="gallery" data-title="عرض 4"><img src="photo4.jpg" alt="عرض 4"></a>
-                <a href="photo5.jpg" data-lightbox="gallery" data-title="عرض 5"><img src="photo5.jpg" alt="عرض 5"></a>
+                <img src="photo1.jpg" alt="عرض 1">
+                <img src="photo2.jpg" alt="عرض 2">
+                <img src="photo3.jpg" alt="عرض 3">
+                <img src="photo4.jpg" alt="عرض 4">
+                <img src="photo5.jpg" alt="عرض 5">
             </div>
         </div>
     </section>
 
-    <!-- الاتصال بنا -->
     <section id="contact">
         <div class="section-content">
             <h2>اتصل بنا</h2>
@@ -219,11 +217,10 @@
         </div>
     </section>
 
-    <!-- التذييل -->
     <footer>
         <div class="contact-info">
             <div class="contact-details">
-                <p><i class="fas fa-envelope email-icon"></i> <a href="mailto:idirsofiane4@gmail.com" class="email">idirsofiane4@gmail.com</a></p>
+                <p><i class="fas fa-envelope email-icon"></i> <a href="mailto:agence.elbiatha@gmail.com" class="email">agence.elbiatha@gmail.com</a></p>
                 <p><i class="fas fa-map-marker-alt address-icon"></i> <span class="address">حي الهضاب 221 سكن قريب من الثانوية مالك بن نبي سطيف</span></p>
                 <div class="phone-numbers">
                     <p><i class="fas fa-phone phone-icon"></i> 05540357297 / 0658990113 / 0540259871 / 036639567</p>
@@ -233,30 +230,36 @@
         <p>&copy; 2024 وكالة البعثة للسياحة والأسفار. جميع الحقوق محفوظة.</p>
     </footer>
 
-    <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
     <script>
-        // Initialize Lightbox
         lightbox.option({
             'resizeDuration': 200,
             'wrapAround': true
         });
-        
+
         // JavaScript for image slideshow
         const images = document.querySelectorAll('.tour-gallery img');
         let currentIndex = 0;
-        
+
         function showNextImage() {
-            images[currentIndex].classList.remove('active');
+            images[currentIndex].style.opacity = 0;
             currentIndex = (currentIndex + 1) % images.length;
-            images[currentIndex].classList.add('active');
+            images[currentIndex].style.opacity = 1;
         }
-        
-        setInterval(showNextImage, 2000); // Adjust the duration (3000ms = 3 seconds) as needed
+
+        setInterval(showNextImage, 3000); // Change the duration as needed
     </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
 
 
 
